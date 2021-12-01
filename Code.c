@@ -20,7 +20,7 @@
                 scanf("%s", password);
 
                 L = strlen(password);
-               if(L>5)
+               if(L>=5)
                {
                  while(i < L)
               {
