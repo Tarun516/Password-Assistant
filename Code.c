@@ -18,8 +18,6 @@
                 printf("\nEnter your password:");
                 scanf("%s", password);
 
-
-
                 L = strlen(password);
                if(L>5){
 
@@ -82,15 +80,13 @@
                     }
                  }
                }
-             else{
-               printf("\nEnter atleast 6 characters\n");
+              else{
+                printf("\nEnter atleast 6 characters\n");
                 a--;
-             }
+              }
                     a++;
                 }
               }
-
-
                 return 0;
             }
 
