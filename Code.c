@@ -1,4 +1,4 @@
- #include<stdio.h>
+            #include<stdio.h>
             #include<string.h>
             #include<ctype.h>
             int main()
@@ -7,8 +7,7 @@
                 int a=1;
 
            {
-                while(a<2)
-              {
+                while(a<2){
                 int x = 4;
                 int i=0;
                 int L;
@@ -18,38 +17,35 @@
                 int sym=0;
                 printf("\nEnter your password:");
                 scanf("%s", password);
+              L=strlen(password);
 
-                L = strlen(password);
-               if(L>=6)
-               {
-                 while(i < L)
-              {
+
+
+        if(L>=6){
+
+                while(i < L){
                     if( islower(password[i]))
-                 {
+                {
                     x--;
                     lc++;
                     break;
-                 }
-                   i++;
+                }
+                i++;
               }
 
               i=0;
-              while(i<L)
-              {
-                 if( isupper(password[i]))
-                 {
+              while(i<L){
+                if( isupper(password[i])){
                     x--;
                     uc++;
                     break;
-                 }
+                }
                 i++;
-             }
+              }
 
               i=0;
-              while(i<L)
-              {
-                if( isdigit(password[i]))
-                {
+              while(i<L){
+                if( isdigit(password[i])){
                     x--;
                     dig++;
                     break;
@@ -58,10 +54,8 @@
               }
 
             i=0;
-              while(i<L)
-              {
-                if( !isalpha(password[i]) && !isdigit(password[i]) )
-                {
+              while(i<L){
+                if( !isalpha(password[i]) && !isdigit(password[i]) ){
                   x--;
                   sym++;
                   break;
@@ -69,37 +63,61 @@
                 i++;
               }
 
-                 if(x==0){
-                    printf("\nEntered password is safe\n");
-                 } 
-                 else
-                 {
-                   printf("\nEntered password is unsafe\n");
-                   a--;
-                   if(lc==0)
+                 if(x==0)
                     {
-                        printf("\n**Lower case alphabet is missing**\n");
+
+                      printf("\nEntered password is safe\n");
+                         char cp[200];
+                         int H;
+                         printf("\nConfirm Password:");
+                         scanf("%s",cp);
+
+                        int A=strcmp(password,cp);
+
+
+                      if(A==0)
+                      {
+
+                            printf("\nPassword confirmed\n");
+                            break;
+                         }
+                         else{
+                            printf("\nPassword doesnt match\n");
+                            a--;
+
+                         }
+                      }
+
+
+                 else{
+                       printf("\nEntered password is unsafe\n");
+                    a--;
+                    if(lc==0){
+                        printf("\n**You did not enter Lower case alphabet**\n");
                     }
-                    if(uc==0)
-                    {
-                        printf("\n**Upper case alphabet is missing**\n");
+                    if(uc==0){
+                        printf("\n**You did not enter Upper case alphabet**\n");
                     }
-                    if(dig==0)
-                    {
-                        printf("\n**Digit is missing**\n");
+                    if(dig==0){
+                        printf("\n**You did not enter digit**\n");
                     }
                     if(sym==0){
-                        printf("\n**Symbol is missing**\n");
+                        printf("\n**You did not enter Symbol**\n");
                     }
                  }
                }
-              else
-              {
-                printf("\nEnter atleast 6 characters\n");
+             else{
+               printf("\nEnter atleast 6 characters.\n");
                 a--;
-              }
-                  a++;
+             }
+                    a++;
                 }
               }
+
+
                 return 0;
             }
+
+
+
+
